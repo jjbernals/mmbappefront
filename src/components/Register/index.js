@@ -35,9 +35,12 @@ const Register = ({ setIsAuthenticated, setIsRegistering }) => {
             // Comprobar si la respuesta es exitosa
             if (response.data) {
                 const userName = response.data.nombre;
+                const idUser = response.data.id;
+
 
                 // Guardar el nombre del usuario en localStorage
                 localStorage.setItem('user_name', userName);
+                localStorage.setItem('id_user', idUser)
                 localStorage.setItem('is_authenticated', true);
                 setIsAuthenticated(true);
 

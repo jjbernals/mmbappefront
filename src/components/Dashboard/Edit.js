@@ -44,46 +44,51 @@ const Edit = ({ cars, selectedCar, setCar, setIsEditing }) => {
   };
 
   return (
-    <div className="small-container">
-      <form onSubmit={handleUpdate}>
-        <h1>Editar pagina web</h1>
-        <label htmlFor="marca">Url</label>
-        <input
-            id="marca"
-            type="text"
-            name="marca"
-            value={marca}
-            onChange={e => setMarca(e.target.value)}
-        />
-        <label htmlFor="modelo">Estado</label>
-        <input
-            id="modelo"
-            type="text"
-            name="modelo"
-            value={modelo}
-            onChange={e => setModelo(e.target.value)}
-        />
-        <label htmlFor="color">Ultimo chequeo</label>
-        <input
-            id="color"
-            type="date"
-            name="color"
-            value={color}
-            onChange={e => setColor(e.target.value)}
-        />
+      <div className="small-container">
+        <form onSubmit={handleUpdate}>
+          <h1>Editar pagina web</h1>
 
-        <div style={{ marginTop: '30px' }}>
-          <input type="submit" value="Actualizar" />
+          <label htmlFor="marca">Url</label>
           <input
-              style={{ marginLeft: '12px' }}
-              className="muted-button"
-              type="button"
-              value="Cancelar"
-              onClick={() => setIsEditing(false)}
+              id="marca"
+              type="text"
+              name="marca"
+              value={marca}
+              onChange={e => setMarca(e.target.value)}
           />
-        </div>
-      </form>
-    </div>
+
+          <label htmlFor="modelo">Estado</label>
+          <select
+              id="modelo"
+              name="modelo"
+              value={modelo}
+              onChange={e => setModelo(e.target.value)}
+          >
+            <option value="activado">Activado</option>
+            <option value="desactivado">Desactivado</option>
+          </select>
+
+          <label htmlFor="color">Ultimo chequeo</label>
+          <input
+              id="color"
+              type="date"
+              name="color"
+              value={color}
+              onChange={e => setColor(e.target.value)}
+          />
+
+          <div style={{marginTop: '30px'}}>
+            <input type="submit" value="Actualizar"/>
+            <input
+                style={{ marginLeft: '12px' }}
+                className="muted-button"
+                type="button"
+                value="Cancelar"
+                onClick={() => setIsEditing(false)}
+            />
+          </div>
+        </form>
+      </div>
   );
 };
 
